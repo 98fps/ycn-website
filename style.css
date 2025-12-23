@@ -1,0 +1,215 @@
+/* Main Styles */
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('https://i.ibb.co/VcHjnqbY/2025-04-25-13-52-39-1-min.jpg') no-repeat center center fixed;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+
+/* Containers */
+
+.main-container {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.welcome-container,
+.like-container {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    color: white;
+    margin-bottom: 20px;
+}
+
+
+/* Welcome Section */
+
+.welcome-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.links a {
+    padding: 10px 20px;
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+
+/* Like Buttons Section */
+
+.like-container p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    transition: all 0.3s;
+}
+
+.buttons {
+    position: relative;
+    min-height: 100px;
+}
+
+#yesBtn,
+#noBtn {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    position: absolute;
+    transition: all 0.3s;
+}
+
+#yesBtn {
+    background: rgba(0, 200, 0, 0.7);
+    left: 30%;
+    transform: translateX(-50%);
+}
+
+#noBtn {
+    background: rgba(200, 0, 0, 0.7);
+    left: 70%;
+    transform: translateX(-50%);
+}
+
+
+/* Potato Rain */
+
+#potato-rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.potato {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: url('https://i.ibb.co/KcVfYFJY/1000033695-removebg-preview.png') center/contain no-repeat;
+    animation: fall linear forwards;
+    filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.7));
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+
+/* Potato Clicker */
+
+#potato-clicker {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 100;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#clickable-potato {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.1s;
+    background: url('https://i.ibb.co/KcVfYFJY/1000033695-removebg-preview.png') center/contain no-repeat;
+}
+
+#clickable-potato:active {
+    transform: scale(0.9);
+}
+
+#click-counter {
+    color: white;
+    font-size: 1.1rem;
+    min-width: 30px;
+    text-align: center;
+}
+
+
+/* Response Text */
+
+.yes-response {
+    color: #4CAF50;
+    text-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+    font-size: 1.8rem;
+}
+
+
+/* Mobile Responsiveness */
+
+@media (max-width: 600px) {
+    .links {
+        gap: 10px;
+    }
+    .links a {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    #yesBtn,
+    #noBtn {
+        padding: 10px 25px;
+        font-size: 1rem;
+    }
+}
+
+#help-button {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: linear-gradient(135deg, #ff4b2b, #ff416c);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 0 15px rgba(255, 65, 108, 0.6);
+    transition: all 0.3s ease;
+    z-index: 999;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#help-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(255, 65, 108, 0.9);
+}
